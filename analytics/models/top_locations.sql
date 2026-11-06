@@ -1,0 +1,7 @@
+Select 
+    job_location,
+    COUNT(*) AS postings
+FROM {{ ref('job_postings' )}}
+GROUP BY job_location
+ORDER BY postings DESC
+Limit 10
